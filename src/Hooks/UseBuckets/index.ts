@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { IBuckets } from "../../Data/IBuckets";
 import { IBucketSteps } from "../../Data/IBucketSteps";
@@ -28,10 +27,7 @@ const useBuckets = (): IUseBuckets => {
     setBucketSteps([]);
   };
   const handleBuckets = () => {
-    if (
-      buckets.bucketX < 0 ||
-      buckets.bucketY < 0
-    ) {
+    if (buckets.bucketX < 0 || buckets.bucketY < 0) {
       setBucketSteps([]);
       return setError("Numbers must not be negative");
     }
@@ -51,8 +47,9 @@ const useBuckets = (): IUseBuckets => {
     const queue: [number, number, string[]][] = [[0, 0, []]];
     const bucketStates = new Set();
 
-    while (queue.length > 0) {
-      const [bucketX, bucketY, steps]: any = queue.shift();
+    while (queue?.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const [bucketX, bucketY, steps]:any = queue.shift();
       const currentState = `${bucketX}-${bucketY}`;
 
       if (bucketStates.has(currentState)) {
