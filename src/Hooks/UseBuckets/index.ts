@@ -39,6 +39,7 @@ const useBuckets = (): IUseBuckets => {
       buckets.bucketX < buckets.targetBucket &&
       buckets.bucketY < buckets.targetBucket
     ) {
+      setBucketSteps([]);
       return setError(
         "Bucket X and Bucket Y are larger than the Target Bucket"
       );
