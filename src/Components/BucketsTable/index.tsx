@@ -81,7 +81,7 @@ const BucketsTable: React.FC<IProps> = ({ data, buckets }) => {
   }, [data]);
 
   return (
-    <Card>
+    <Card data-testid="buckets-table">
       <Table
         dataSource={tableData}
         columns={columns}

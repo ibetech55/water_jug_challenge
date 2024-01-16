@@ -10,7 +10,7 @@ interface IProps {
   handleReset: () => void;
 }
 
-const BucketsForm:React.FC<IProps> = ({
+const BucketsForm: React.FC<IProps> = ({
   buckets,
   setBuckets,
   handleBuckets,
@@ -19,8 +19,9 @@ const BucketsForm:React.FC<IProps> = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBuckets({ ...buckets, [e.target.name]: Number(e.target.value) });
   };
+
   return (
-    <Card className="buckets-form">
+    <Card className="buckets-form" data-testid="buckets-form">
       <Form
         onFinish={() => handleBuckets()}
         onReset={handleReset}
@@ -29,7 +30,7 @@ const BucketsForm:React.FC<IProps> = ({
         <Form.Item label="Bucket X" name="bucketX">
           <Input
             type="number"
-            value={buckets.bucketX}
+            value={buckets.bucketX.toString()}
             name="bucketX"
             onChange={handleChange}
           />
@@ -55,6 +56,7 @@ const BucketsForm:React.FC<IProps> = ({
             Submit
           </Button>
           <Button
+            name="reset"
             type="primary"
             htmlType="reset"
             onClick={handleReset}

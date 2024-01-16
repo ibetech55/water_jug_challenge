@@ -14,6 +14,7 @@ interface IUseBuckets {
   setBuckets: (buckets: IBuckets) => void;
   bucketSteps: IBucketSteps[];
   error: string;
+  setError: (error: string) => void;
   handleBuckets: () => void;
   handleReset: () => void;
 }
@@ -136,6 +137,7 @@ const useBuckets = (): IUseBuckets => {
     error,
     handleBuckets,
     handleReset,
+    setError
   };
 };
 
