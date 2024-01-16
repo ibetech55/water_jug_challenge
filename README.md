@@ -87,4 +87,7 @@ Breadth-First Search (BFS) approach was employed for this challenge. BFS explore
 - Run "npm install" to install dependencies.
 - Run "npm run dev" to start the app on your browser.
 
+## Instructions to Test App:
+- Run "npm run test" to test the app.
+
 The app will run on port 3000.
